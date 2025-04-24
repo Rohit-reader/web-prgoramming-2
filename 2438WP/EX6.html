@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation using JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <script>
+        function validateForm() {
+            let isValid = true;
+    
+            document.querySelectorAll(".error").forEach(el => el.innerText = "");
+    
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let phone = document.getElementById("phone").value.trim();
+            let male = document.getElementById("male").checked;
+            let female = document.getElementById("female").checked;
+            let terms = document.getElementById("terms").checked;
+            let toggleSwitch = document.getElementById("toggleSwitch").checked;
+            let satisfaction = document.getElementById("satisfaction").value;
+    
+            if (!name) {
+                document.getElementById("nameError").innerText = "Name is required.";
+                isValid = false;
+            }
+    
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("emailError").innerText = "Invalid email format.";
+                isValid = false;
+            }
+    
+            if (password.length < 6) {
+                document.getElementById("passwordError").innerText = "Password must be at least 6 characters.";
+                isValid = false;
+            }
+    
+            if (!male && !female) {
+                document.getElementById("genderError").innerText = "Select a gender.";
+                isValid = false;
+            }
+    
+            let phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(phone)) {
+                document.getElementById("phoneError").innerText = "Phone number must be 10 digits.";
+                isValid = false;
+            }
+    
+            if (satisfaction < 20) {
+                document.getElementById("satisfactionError").innerText = "Satisfaction must be at least 20.";
+                isValid = false;
+            }
+    
+            if (!toggleSwitch) {
+                document.getElementById("toggleSwitchError").innerText = "Enable notifications.";
+                isValid = false;
+            }
+    
+            if (!terms) {
+                document.getElementById("termsError").innerText = "You must agree to terms.";
+                isValid = false;
+            }
+    
+            return isValid;
+        }
+    </script>
+ <!--script>
+        function validateForm() {
+            let isfilled = true;
+            document.querySelectorAll(".error").forEach(el => el.innerText = "");
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value;
+            let age = document.getElementById("age").value;
+            let male = document.getElementById("male").cheked;
+            let female = document.getElementById("female").cheked;
+
+            if (!name) {
+                document.getElementById("nameError").innerText = "Name is required.";
+                isfilled = false;
+            }
+            if (!email) {
+                document.getElementById("emailError").innerText = "Email is required.";
+                isfilled = false;
+            }
+            if (!password) {
+                document.getElementById("passwordError").innerText = "password is required.";
+                isfilled = false;
+            }
+            if(password.length < 6) {
+                document.getElementById("passwordError").innerText = "password must be 6 characters.";
+                isfilled = false;
+            }
+            if(!(age > 0 && age < 120)) {
+                document.getElementById("ageError").innerText = "Age must between 0 and 120.";
+                isfilled = false;
+            } 
+            if(!age) {
+                document.getElementById("ageError").innerText = "Age must be filled.";
+                isfilled = false;
+            }
+            if(!) {
+                document.getElementById("genderError").innerText = "Select a gender.";
+                isfilled = false;
+            }
+            
+            return isfilled;
+        }
+    </script-->
+    <style>
+         body {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(16, 114, 184);
+            margin: 0;
+        }
+        .container {
+            background: rgb(246, 245, 245);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+        .error { color: red; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h5>Form validation using JavaScript</h5>
+        <form class="form-control mt-3" onsubmit="return validateForm()" style="border-color: black;">
+            <fieldset>
+            <legend>TCS Login Form</legend>
+           
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" id = "name" placeholder="Enter your name"/>
+            <span id = "nameError" class = "error"></span><br>
+
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" id = "password" placeholder="Enter your password" />
+            <span id = "passwordError" class = "error"></span><br>
+        </fieldset>
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id = "email" placeholder="Enter your email"/>
+        <span id = "emailError" class = "error"></span><br>
+
+        <label class = "form-label">Age</label>
+        <input type = "tel" class = "form-control" id = "age" placeholder="Enter your age">
+        <span id = "ageError" class = "error"></span><br>
+    
+            <label class="form-label">Gender</label><br />
+            <div class="input-group form-control">
+    
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id = "male"/>
+                    <label class="form-check-label">Male &nbsp;</label>
+
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" id = "female"/>
+                    <label class="form-check-label">Female &nbsp;</label>
+                </div>
+            </div>
+           
+            <span id = "genderError" class = "error"></span><br>
+    
+            <label class="form-label">Programming Skill</label>
+            <div class="input-group form-control">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input"  id = "java" value = "java"/>
+                    <label class="form-check-label">Java &nbsp;</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" />
+                    <label class="form-check-label" id = "c++" value = "c++">C++ &nbsp;</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id = "c#" value = "c#"/>
+                    <label class="form-check-label">C# &nbsp;</label>
+                </div>
+            </div><br />
+            <label class="form-label">Country</label>
+            <div class="input-group">
+                <select class="form-select">
+                    <option selected>Choose country</option>
+                    <option value="1">USA</option>
+                    <option value="2">UK</option>
+                    <option value="3">India</option>
+                </select><br>
+            </div><br />
+            <label class="form-label">Message (Optional)</label>
+            <textarea class="form-control" rows="5" id = "message" placeholder="Enter your message"></textarea><br />
+            <button type="submit" class="btn btn-primary">Submit</button>
+    
+    
+        </form>
+    </div>
+    
+</body>
+</html>

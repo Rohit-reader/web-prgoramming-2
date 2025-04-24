@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM Objects</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic DOM Objects in JavaScript</h1>
+    <p id="demo">Click the button to trigger DOM manipulation:</p>
+
+    <button id="changeContent">Change Content</button>
+
+    <div id="output"></div>
+
+    <script>
+        // 1. Document Object
+        console.log("Document Title: ", document.title);  // Using document object to access the title
+
+        // 2. Window Object
+        console.log("Window Width: ", window.innerWidth);  // Using window object to get the window width
+
+        // 3. HTMLElement
+        const demoElement = document.getElementById("demo");
+        console.log("HTMLElement: ", demoElement);  // Logging an HTMLElement
+
+        // 4. NodeList
+        const allParagraphs = document.querySelectorAll("p");
+        console.log("NodeList: ", allParagraphs);  // Logging a NodeList (list of all <p> tags)
+
+        // 5. HTMLCollection
+        const allLinks = document.getElementsByTagName("a");
+        console.log("HTMLCollection: ", allLinks);  // Logging an HTMLCollection (all <a> tags)
+
+        // 6. Event Object
+        const button = document.getElementById("changeContent");
+        button.addEventListener("click", function(event) {
+            // 7. Manipulating DOM when event occurs
+            demoElement.textContent = "Content Changed!";
+            document.getElementById("output").innerHTML = "You clicked the button. Event Type: " + event.type; // Using Event object
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HiTech Prints - Custom Mobile Cases</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+    #product-container {
+      margin-top: 20px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+    }
+    h1 span {
+      color: #ff4081;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="main-heading">Welcome to <span>HiTech Prints</span></h1>
+  <div id="product-container">
+    <p>Check out our latest custom mobile case designs!</p>
+  </div>
+
+  <script>
+  
+    const newProduct = document.createElement('div');
+    newProduct.className = 'product';
+
+  
+    const productText = document.createTextNode('Custom iPhone 15 Case - Floral Design');
+
+  
+    newProduct.appendChild(productText);
+
+ 
+    const productContainer = document.getElementById('product-container');
+    productContainer.appendChild(newProduct);
+
+    
+    const paragraphs = document.getElementsByTagName('p');
+    console.log('First product description:', paragraphs[0].innerText);
+
+    const announcement = document.createElement('div');
+    announcement.textContent = '🔥 New arrivals just dropped!';
+    announcement.style.color = 'green';
+    productContainer.insertBefore(announcement, newProduct);
+    const heading = document.querySelector('#main-heading');
+    heading.innerHTML = 'Welcome to <span>HiTech Prints</span> - Stylish & Protective';
+
+
+    const summary = document.createElement('div');
+    summary.innerHTML = "<strong>Why choose us?</strong> We offer the most stylish, protective, and affordable mobile cases.";
+    productContainer.appendChild(summary);
+
+   
+    summary.style.backgroundColor = '#e0f7fa';
+    summary.style.padding = '12px';
+    summary.style.border = '2px dashed #009688';
+    summary.style.marginTop = '15px';
+  </script>
+</body>
+</html>

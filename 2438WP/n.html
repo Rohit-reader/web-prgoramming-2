@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulma Fieldset with Black Border</title>
+  <!-- Bulma CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+  
+  <style>
+    /* Custom style to add a black border to the fieldset */
+    fieldset.box {
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <form>
+    <fieldset class="box">
+      <legend class="is-size-4 has-text-weight-bold">Your Information</legend>
+
+      <div class="field">
+        <label class="label" for="name">Name</label>
+        <div class="control">
+          <input class="input" type="text" id="name" placeholder="Enter your name">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label" for="email">Email</label>
+        <div class="control">
+          <input class="input" type="email" id="email" placeholder="Enter your email">
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+
+<!-- Bulma JS (Optional, for any interactivity) -->
+<script src="https://cdn.jsdelivr.net/npm/bulma@0.9.4/js/bulma.min.js"></script>
+</body>
+</html>

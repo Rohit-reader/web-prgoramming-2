@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiTech Prints</title>
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+        }
+
+        header nav a:hover {
+            background-color: #e50914;
+            border-radius: 5px;
+        }
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .product {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 280px;
+            height: 400px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .product p {
+            font-size: 1.1em;
+            margin: 10px 0;
+            color: #777;
+        }
+
+        .product .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #e50914;
+            margin-bottom: 20px;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        .btn {
+            background-color: #e50914;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b3060e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>HiTech Prints</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="main-content">
+        <div class="product">
+            <img src="mobile case.jpg" alt="Mobile Case">
+            <h3>Custom Mobile Cases</h3>
+            <p>Personalized mobile cases for every style and personality.</p>
+            <p class="price">Rs. 500</p>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="mug.jpg" alt="Mug">
+            <h3>Custom Mugs</h3>
+            <p>Perfect mugs for gifts or your morning coffee.</p>
+            <p class="price">Rs. 450</p>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="keychain.jfif" alt="Key Chain">
+            <h3>Key Chains</h3>
+            <p>Custom keychains to carry your memories everywhere.</p>
+            <p class="price">Rs. 400</p>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+        <div class="product">
+            <img src="numberplate.jpg" alt="Key Chain">
+            <h3>Number plates</h3>
+            <p>Custom number plates</p>
+            <p class="price">Rs. 400</p>
+            <a href="#" class="btn">Buy Now</a>
+        </div>
+    </section>
+</body>
+</html>
